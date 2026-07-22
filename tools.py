@@ -26,7 +26,6 @@ def web_search(query : str) -> str :
 
     return "\n---\n".join(out)
 
-print(web_search.invoke("Who won the Fifa world cup"))
 
 @tool
 def scrape_url(url : str) -> str :
@@ -40,3 +39,5 @@ def scrape_url(url : str) -> str :
         return soup.get_text(separator=" ", strip=True)[:3000]
     except Exception as e :
         return f"Could not scrape URL : {str(e)}"
+
+print(scrape_url.invoke("https://docs.langchain.com/oss/python/integrations/chat/deepseek"))
