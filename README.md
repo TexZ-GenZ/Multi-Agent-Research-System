@@ -9,14 +9,28 @@ Built with [LangChain](https://www.langchain.com/), [Mistral AI](https://mistral
 ## Architecture
 
 ```
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│  01 SEARCH   │───▶│  02 READER   │───▶│  03 WRITER   │───▶│  04 CRITIC   │
-│    Agent     │    │    Agent     │    │    Chain     │    │    Chain     │
-│              │    │              │    │              │    │              │
-│  Tavily web  │    │ BeautifulSoup│    │ Mistral LLM  │    │ Mistral LLM  │
-│  search      │    │ deep scrape  │    │ structured   │    │ score +      │
-│              │    │              │    │ report       │    │ feedback     │
-└──────────────┘    └──────────────┘    └──────────────┘    └──────────────┘
+╔══════════════════════════════════════════╗
+║         01  ·  SEARCH AGENT              ║
+║     Tavily web search → URLs & snippets  ║
+╚══════════════════════════════════════════╝
+                    │
+                    ▼
+╔══════════════════════════════════════════╗
+║         02  ·  READER AGENT              ║
+║   BeautifulSoup deep scrape → content    ║
+╚══════════════════════════════════════════╝
+                    │
+                    ▼
+╔══════════════════════════════════════════╗
+║         03  ·  WRITER CHAIN              ║
+║  Mistral LLM → structured report draft   ║
+╚══════════════════════════════════════════╝
+                    │
+                    ▼
+╔══════════════════════════════════════════╗
+║         04  ·  CRITIC CHAIN              ║
+║   Mistral LLM → score /10 + feedback     ║
+╚══════════════════════════════════════════╝
 ```
 
 ### Step-by-step
