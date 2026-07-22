@@ -3,7 +3,7 @@ langchain-core
 langchain-community
 
 langchain_deepseek
-
+langchain_mistralai
 transformers
 python-dotenv
 
