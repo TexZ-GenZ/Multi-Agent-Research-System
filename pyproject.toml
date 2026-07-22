@@ -4,4 +4,26 @@ version = "0.1.0"
 description = "A deep research AI agent"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+
+dependencies = [
+    # LLM providers
+    "langchain",
+    "langchain-core",
+    "langchain-community",
+    "langchain-mistralai",
+
+    # Search tool
+    "langchain-tavily",
+
+    # Document parsing / scraping
+    "beautifulsoup4",
+
+    # HTTP clients
+    "requests",
+
+    # Core utils
+    "python-dotenv",
+    "tiktoken",
+    "streamlit",
+    "rich",
+]

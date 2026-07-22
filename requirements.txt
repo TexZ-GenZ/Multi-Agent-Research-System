@@ -1,31 +1,20 @@
+# ── LLM providers ──
 langchain
 langchain-core
 langchain-community
-
-langchain_deepseek
 langchain_mistralai
-transformers
-python-dotenv
 
-tiktoken
-
-faiss-cpu
-chromadb
-
-pypdf
-unstructured
-beautifulsoup4
-lxml
-
-requests
-httpx
-
-pydantic
-streamlit
-
-chardet
-langchain_chroma
-
+# ── Search tool ──
 langchain_tavily
 
-bs4
+# ── Document parsing / scraping ──
+beautifulsoup4
+
+# ── HTTP clients ──
+requests
+
+# ── Core utils ──
+python-dotenv
+tiktoken
+streamlit
+rich
